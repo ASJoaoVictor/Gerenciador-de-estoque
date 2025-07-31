@@ -52,6 +52,10 @@ Aplicação **desktop** com interface gráfica feita em **Tkinter**.
     ```bash
     sudo dnf install python3-tkinter
     ```
+6. Execute o sistema:
+   ```bash
+   python3 main.py
+   ```
 ## 📂 Estrutura dos Dados
 Os dados são armazenados localmente em arquivos .json por meio do TinyDB, eliminando a necessidade de um banco de dados tradicional.
 
