@@ -31,7 +31,7 @@ Aplicação **desktop** com interface gráfica feita em **Tkinter**.
 
 2. Crie e ative um ambiente virtual Python (recomendado):
     ```bash
-    python -m venv venv
+    python3 -m venv venv
 
     # Windows
     venv\Scripts\activate
