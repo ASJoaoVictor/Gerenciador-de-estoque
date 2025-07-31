@@ -30,17 +30,20 @@ Aplicação **desktop** com interface gráfica feita em **Tkinter**.
    ```
 
 2. Crie e ative um ambiente virtual Python (recomendado):
-    ```bash
-    python3 -m venv venv
-    ```
     - Windows
+       ```bash
+       python -m venv venv
+       ```
       ```
-       venv\Scripts\activate
+      venv\Scripts\activate
       ```
     - Linux/mac
+      ```bash
+      python3 -m venv venv
       ```
-       source venv/bin/activate
-       ```
+      ```
+      source venv/bin/activate
+      ```
 4. Instale a dependência principal:
    ```bash
    pip install tinydb
@@ -55,9 +58,14 @@ Aplicação **desktop** com interface gráfica feita em **Tkinter**.
        sudo dnf install python3-tkinter
        ```
 6. Execute o sistema:
-   ```bash
-   python3 main.py
-   ```
+     - Windows
+         ```bash
+         python main.py
+         ```
+      - Linux/mac
+         ```bash
+         python3 main.py
+         ```
 ## 📂 Estrutura dos Dados
 Os dados são armazenados localmente em arquivos .json por meio do TinyDB, eliminando a necessidade de um banco de dados tradicional.
 
