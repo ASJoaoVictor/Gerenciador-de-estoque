@@ -46,14 +46,14 @@ Aplicação **desktop** com interface gráfica feita em **Tkinter**.
    pip install tinydb
    ```
 5. (Opcional) Se Tkinter não estiver instalado, instale manualmente:
-  - Ubuntu/Debian:
-      ```bash
-      sudo apt-get install python3-tk
-      ```
-  - Fedora:
-    ```bash
-    sudo dnf install python3-tkinter
-    ```
+     - Ubuntu/Debian:
+         ```bash
+         sudo apt-get install python3-tk
+         ```
+     - Fedora:
+       ```bash
+       sudo dnf install python3-tkinter
+       ```
 6. Execute o sistema:
    ```bash
    python3 main.py
