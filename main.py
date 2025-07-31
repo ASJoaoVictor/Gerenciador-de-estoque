@@ -16,6 +16,7 @@ queryScreen = Frame(root)
 moveScreen = Frame(root)
 editScreen = Frame(root)
 
+#Configuraão das telas principais na rota
 for tela in (mainScreen, addScreen, queryScreen, moveScreen, editScreen):
     tela.grid(row=0, column=0, sticky="nsew")
     tela.grid_rowconfigure(0, weight=1)
@@ -33,7 +34,7 @@ s.configure("TLabel", font=("Arial", 11))
 #Tela de cadastro
 class render_addScreen():
     def __init__(self):
-
+        #Limpa os widgets
         for widget in addScreen.winfo_children():
             widget.destroy()
 
@@ -71,6 +72,7 @@ class render_addScreen():
             widget.grid(pady=5, padx=5)
     
     def cadastrar_produto(self):
+        #Tenta pegar os dados do form
         try:
             codigoValor = self.codigo.get()
             nomeValor = self.nome.get()
@@ -81,11 +83,13 @@ class render_addScreen():
             return
 
         self.message.set("")
-        
+
+        #Verifica se os dados vem vazios
         if(codigoValor == "" or nomeValor == "" or quantValor == "" or precoValor == ""): 
             self.message.set("Valores inválidos")
             return
-        
+
+        #Tenta cadastrar o produto
         if(dados.cadastrar_produto(codigoValor, nomeValor, quantValor, precoValor)):
             self.message.set("Cadastrado com sucesso")
             self.limpar()
@@ -145,14 +149,15 @@ class render_queryScreen():
         for widget in center.winfo_children():
             widget.grid(pady=5, padx=5)
 
+    #Tela para confirmar exclusão
     def del_topScreen(self, id):
         self.delTopScreen = Toplevel(root)
         ttk.Label(self.delTopScreen, text=f"Deletar {dados.get_produto_id(id)['nome']}?").grid(column=0, row=0)
         ttk.Button(self.delTopScreen, text="Cancelar", command=self.delTopScreen.destroy).grid(column=0, row=1)
         ttk.Button(self.delTopScreen, style="red.TButton",text="Confirmar", command=lambda: self.deletar_produto(id)).grid(column=2, row=1)
 
+    #Deletar de fato
     def deletar_produto(self, id):
-
         if(dados.deletar_produto(id)):
             self.message.set("Produto deletado")
             self.delTopScreen.destroy()
@@ -161,7 +166,8 @@ class render_queryScreen():
             render_queryScreen()
         else:
             self.message.set("Não foi póssivel deletar, tente mais tarde")
-    
+
+    #Busca o produto com o código especificado
     def buscar(self):
         global codigoValor 
         codigoValor = self.code.get()
@@ -199,7 +205,7 @@ class render_editScreen():
 
         for widget in editScreen.winfo_children():
             widget.grid(pady=5, padx=5)
-    
+
     def alterar_produto(self, id):
         self.message.set("")
         try:
@@ -222,6 +228,7 @@ class render_editScreen():
 #Tela de movimentação de estoque
 class render_moveScreen():
 
+    #Lista de compras fica disponivel para das as funções
     global listaCompras
     listaCompras = []
 
@@ -256,7 +263,6 @@ class render_moveScreen():
         ttk.Button(center, text="Remover", style="red.TButton",command=lambda: self.addProduto(remover=True)).grid(column=1, row=6)
 
         global listaCompras
-        #print(listaCompras)
         ttk.Label(center, text="Quantidade").grid(column=0, row=7)
         ttk.Label(center, text="Nome").grid(column=1, row=7)
         ttk.Label(center, text="Preço uni").grid(column=2, row=7)
