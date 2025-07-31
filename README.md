@@ -32,13 +32,15 @@ Aplicação **desktop** com interface gráfica feita em **Tkinter**.
 2. Crie e ative um ambiente virtual Python (recomendado):
     ```bash
     python3 -m venv venv
-
-    # Windows
-    venv\Scripts\activate
-
-    # Linux/macOS
-    source venv/bin/activate
     ```
+    - Windows
+      ```
+       venv\Scripts\activate
+      ```
+    - Linux/mac
+      ```
+       source venv/bin/activate
+       ```
 4. Instale a dependência principal:
    ```bash
    pip install tinydb
