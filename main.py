@@ -378,5 +378,6 @@ class render_mainScreen:
             ttk.Button(center, text=button["nome"], style=style,width="20",command=button["funcao"]).grid(column=0, row=i+1, pady=5)
     
 
-render_mainScreen()
-root.mainloop()
+if __name__ == "__main__":
+    render_mainScreen()
+    root.mainloop()
