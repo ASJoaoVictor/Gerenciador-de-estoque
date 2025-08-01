@@ -2,6 +2,12 @@
 
 Sistema simples de controle de estoque com interface gráfica em Tkinter, desenvolvido em Python. Ele permite o cadastro, edição, exclusão e busca de produtos, além de controlar a saída de itens do estoque.
 
+## 🎯 Objetivos
+   - Facilitar o controle de produtos em estoque para pequenos comércios ou uso pessoal.
+   - Oferecer uma interface simples e funcional para operações básicas de estoque.
+   - Eliminar a necessidade de banco de dados robusto usando armazenamento local leve.
+
+
 ## 🛠️ Tecnologias Utilizadas
 
 - Python
@@ -16,6 +22,10 @@ Sistema simples de controle de estoque com interface gráfica em Tkinter, desenv
 - ❌ Exclusão de produtos
 - 🔍 Busca por código do produto
 - 📤 Saída de estoque(Venda)
+
+## 🧩 TinyDB
+
+[TinyDB](https://tinydb.readthedocs.io/) é um banco de dados NoSQL leve e orientado a documentos, que armazena os dados em arquivos `.json`. Ele foi escolhido neste projeto por sua simplicidade, leveza e por não exigir a configuração de um servidor de banco de dados tradicional, tornando-o ideal para aplicações desktop como este gerenciador de estoque.
 
 ## 🖥️ Interface
 
